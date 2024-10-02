@@ -1,0 +1,246 @@
+/* Global styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5; /* Light background for better readability */
+  color: #333; /* Dark text for contrast */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container for the app */
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Front Page Styling */
+.front-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e0e0e0; /* Lighter gray for a clinical feel */
+  text-align: center;
+  animation: slideIn 0.6s forwards; /* Apply the slide-in animation */
+}
+
+/* Banner Styling */
+.banner {
+  width: 100%;
+  max-height: 500px; /* Max height of the banner */
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%; /* Make the banner full width */
+  height: 300px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.front-page h1 {
+  font-size: 3em;
+  color: #00796b; /* Teal for professionalism */
+  margin-bottom: 20px;
+}
+
+.front-page p {
+  font-size: 1.5em;
+  color: #555; /* Darker gray for the text */
+  margin-bottom: 30px;
+}
+
+.start-button {
+  background-color: #00796b; /* Teal button */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #009688; /* Lighter teal on hover */
+}
+
+/* Slide Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.front-page.exit {
+  animation: slideOut 0.6s forwards;
+}
+
+/* Table Page */
+.table-page {
+  width: 100vw;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background for the table page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Ensure it fills at least the viewport height */
+  position: relative; /* Position for absolute elements */
+  overflow-y: auto; /* Enable vertical scrolling */
+  transform: translateX(100%);
+  animation: tableSlideIn 0.6s forwards;
+}
+
+/* Slide-in animation for table page */
+@keyframes tableSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes tableSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.table-page.exit {
+  animation: tableSlideOut 0.6s forwards;
+}
+
+/* Home button styling */
+.home-button {
+  position: absolute; /* Position it at the top left */
+  top: 50px; /* Adjust to your liking */
+  left: 20px; /* Adjust to your liking */
+  background-color: #00796b; /* Teal for Home button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #009688; /* Lighter teal on hover */
+}
+
+/* Table styling */
+.table-container {
+  width: 90%; /* Set a fixed width for the table */
+  max-height: 80vh; /* Set a max height for the table */
+  overflow-y: auto; /* Enable scrolling for the table */
+  background-color: #ffffff; /* White background for table container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 20px;
+  border: 1px solid #ccc; /* Light gray border */
+  text-align: center;
+  font-size: 1em; /* Increased font size for readability */
+  font-weight: 400;
+}
+
+th {
+  background-color: #00796b; /* Teal header */
+  color: white;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+td {
+  background-color: #ffffff; /* White cell background */
+  color: #333; /* Dark text for cells */
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0; /* Light gray for even rows */
+}
+
+button {
+  background-color: #00796b; /* Teal for buttons */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #009688; /* Lighter teal on hover */
+}
+
+/* Clear Scores button styling */
+.clear-scores-button {
+  background-color: #ff5722; /* Orange for Clear Scores button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.clear-scores-button:hover {
+  background-color: #ff7043; /* Lighter orange on hover */
+}
+
+/* Input styling */
+input[type="number"] {
+  width: 60px; /* Fixed width for score input */
+  padding: 5px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1em; /* Increase font size */
+  font-weight: 400; /* Normal weight for input text */
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #00796b; /* Teal border on focus */
+  outline: none; /* Remove outline */
+}
